@@ -19,7 +19,7 @@ message ImageIdsRequest {
 
 // OrderNumberRequest sent to the server
 message OrderNumberRequest {
-	int32 orderNumber = 1;
+	int64 orderNumber = 1;
 }
 
 message ImageIds {
