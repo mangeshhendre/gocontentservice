@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/bradfitz/gomemcache/memcache"
-	pb "github.com/divyag9/gocontentservice/pkg/contentservice"
-	"github.com/divyag9/gocontentservice/pkg/list"
+	pb "github.com/safeguardproperties/gocontentservice/pkg/contentservice"
+	"github.com/safeguardproperties/gocontentservice/pkg/list"
 	"golang.org/x/net/context"
 	ora "gopkg.in/rana/ora.v4"
 

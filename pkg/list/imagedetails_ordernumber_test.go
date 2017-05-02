@@ -5,13 +5,14 @@ import (
 	"fmt"
 	"os"
 	"reflect"
+	"strings"
 	"testing"
 	"time"
 
 	"github.com/bradfitz/gomemcache/memcache"
-	"github.com/divyag9/gocontentservice/pkg/contentservice"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/timestamp"
+	"github.com/safeguardproperties/gocontentservice/pkg/contentservice"
 	"gopkg.in/rana/ora.v4"
 	_ "gopkg.in/rana/ora.v4"
 )
@@ -263,7 +264,8 @@ func getDb() *ora.Ses {
 
 func getMemcacheClient() *memcache.Client {
 	servers := os.Getenv("MEMCACHE_SERVERS")
-	mc := memcache.New(servers)
+	memcacheServers := strings.Split(servers, ",")
+	mc := memcache.New(memcacheServers...)
 
 	return mc
 }

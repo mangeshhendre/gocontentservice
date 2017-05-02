@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/divyag9/gocontentservice/pkg/contentservice"
+	pb "github.com/safeguardproperties/gocontentservice/pkg/contentservice"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/grpclog"

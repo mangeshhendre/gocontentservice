@@ -2,7 +2,7 @@ package list
 
 import (
 	"github.com/bradfitz/gomemcache/memcache"
-	"github.com/divyag9/gocontentservice/pkg/contentservice"
+	"github.com/safeguardproperties/gocontentservice/pkg/contentservice"
 	ora "gopkg.in/rana/ora.v4"
 )
 

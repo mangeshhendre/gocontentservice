@@ -7,7 +7,7 @@ import (
 	"reflect"
 
 	"github.com/bradfitz/gomemcache/memcache"
-	"github.com/divyag9/gocontentservice/pkg/contentservice"
+	"github.com/safeguardproperties/gocontentservice/pkg/contentservice"
 	"gopkg.in/rana/ora.v4"
 )
 
