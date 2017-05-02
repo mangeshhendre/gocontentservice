@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+import "github.com/golang/protobuf/ptypes/timestamp/timestamp.proto";
+
+package contentservice;
+
+service ContentService {
+	// Returns ImageDetail records for the requested imageids
+	rpc ListByImageIds (ImageIdsRequest) returns (ListResponse) {}
+
+	// Returns Imagedetail records for the requested ordernumber
+	rpc ListByOrderNumber (OrderNumberRequest) returns (ListResponse) {}
+}
+
+// ImageIdsRequest sent to the server
+message ImageIdsRequest {
+	ImageIds imageIds = 1;
+}
+
+// OrderNumberRequest sent to the server
+message OrderNumberRequest {
+	int64 orderNumber = 1;
+}
+
+message ImageIds {
+	repeated int64 imageIds = 1;
+}
+
+// ListResponse sent from the server
+message ListResponse {
+	repeated ImageDetail imageDetails = 1;
+}
+
+message ImageDetail {
+	int64 imageId = 1;
+	string imageFileName = 2;
+	google.protobuf.Timestamp scanDate = 4;
+	google.protobuf.Timestamp imageUTCDate = 5;
+	google.protobuf.Timestamp imageTakenDate = 6;
+	google.protobuf.Timestamp dateCreated = 7;
+	int64 orderNumber = 8;
+	string archived = 9;
+	string category = 10;
+	int64 contractorId = 11;
+	google.protobuf.Timestamp dateModified = 12;
+	string deptCode = 13;
+	string descPrefix = 14;
+	string descText = 15;
+	int32 fileSize = 16;
+	int32 imageHeight = 17;
+	int32 imageWidth = 18;
+	int32 imageType = 19;
+	bool imageRotated = 20;
+	google.protobuf.Timestamp releaseDate = 21;
+	int32 thumbnailSize = 22;
+	string mimeType = 23;
+	string webFileName = 24;
+	string generatedImageFilePath = 25;
+	string guid = 26;
+}
